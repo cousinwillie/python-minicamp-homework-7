@@ -1,3 +1,14 @@
 body {
   background: whitesmoke;
 }
+/*EXTRA CREDIT STARTS*/
+.remove-post{
+  color: red;
+}
+#post-list{
+  visibility: hidden;
+}
+.title{
+  visibility: visible;
+}
+/*EXTRA CREDIT ENDS*/

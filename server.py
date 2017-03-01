@@ -39,6 +39,18 @@ def getPosts():
     connection.close()
     return jsonify(postsList)
 
+# EXTRA CREDIT STARTS
+@app.route('/remove/<post_id>')
+def removePost(post_id):
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+
+    cursor.execute('DELETE FROM posts WHERE id=?', (post_id))
+    connection.commit()
+    connection.close()
+    return post_id + ' successfully deleted'
+# EXTRA CREDIT ENDS
+
 @app.route('/like/<post_id>')
 def likePost(post_id):
     connection = sqlite3.connect('database.db')

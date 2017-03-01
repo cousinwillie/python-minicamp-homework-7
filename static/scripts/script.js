@@ -22,6 +22,18 @@ function populatePosts(){
         });
       });
       $('#post-list').append(newPost);  // Add it to the ul in the HTML
+      // EXTRA CREDIT STARTS
+      $(newPost).find('.remove-post').on('click', function(){
+          $.ajax({
+            url: '/remove/' + post[4] // From @app.route('/posts/<post_id>')
+          }).done(function(){
+              $(newPost).remove();
+        });
+      });
+      $(newPost).find('.title').on('click', function(){
+              $(newPost).css('visibility','visible');
+      });
+      //EXTRA CREDIT ENDS
     });
   });
 };
