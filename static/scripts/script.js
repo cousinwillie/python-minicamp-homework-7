@@ -1,4 +1,8 @@
 $(function(){
+  populatePosts();
+});
+
+function populatePosts(){
   $.ajax({
     url: '/posts' //From the app.route('/posts')
   }).done(function(response){
@@ -20,4 +24,4 @@ $(function(){
       $('#post-list').append(newPost);  // Add it to the ul in the HTML
     });
   });
-});
+};
